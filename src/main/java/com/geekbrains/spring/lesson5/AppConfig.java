@@ -38,7 +38,7 @@ public class AppConfig {
 //        // Создаем источник данных
 //        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //        // Задаем параметры подключения к базе данных
-//        dataSource.setUrl("jdbc:h2:file:D:\\java-learn\\geekbrains\\spring-lesson-5\\db\\demo;MV_STORE=false");
+//        dataSource.setUrl("jdbc:h2:file:C:\\Users\\Professional\\Searches\\Desktop\\java\\GeekBrains\\Spring\\teacher.lesson5-Spring\\db\\demo;MV_STORE=false");
 //        dataSource.setUsername("sa");
 //        dataSource.setDriverClassName("org.h2.Driver");
 //        dataSource.setPassword("");
