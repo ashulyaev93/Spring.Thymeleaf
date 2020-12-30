@@ -3,6 +3,8 @@ package com.geekbrains.spring.lesson5;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+//for pull
 @SpringBootApplication
 public class StoreApplication {
 
