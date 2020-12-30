@@ -1,9 +1,7 @@
 package com.geekbrains.spring.lesson5.utils;
 
 import com.geekbrains.spring.lesson5.entities.Order;
-import com.geekbrains.spring.lesson5.entities.Product;
 import com.geekbrains.spring.lesson5.repositories.specifications.OrderSpecifications;
-import com.geekbrains.spring.lesson5.repositories.specifications.ProductSpecifications;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.util.Map;
@@ -23,17 +21,24 @@ public class OrderFilter {
             filterDefinitionBuilder.append("&code=").append(filterCode);
         }
 
-        if (params.containsKey("min_price") && !params.get("min_price").isBlank()) {
-            Integer minPrice = Integer.parseInt(params.get("min_price"));
-            spec = spec.and(OrderSpecifications.priceOrderGreaterOrEqualsThan(minPrice));
-            filterDefinitionBuilder.append("&min_price=").append(minPrice);
+        if (params.containsKey("min_currentPrice") && !params.get("min_currentPrice").isBlank()) {
+            Integer minCurrentPrice = Integer.parseInt(params.get("min_currentPrice"));
+            spec = spec.and(OrderSpecifications.priceOrderGreaterOrEqualsThan(minCurrentPrice));
+            filterDefinitionBuilder.append("&min_currentPrice=").append(minCurrentPrice);
         }
 
-        if (params.containsKey("max_price") && !params.get("max_price").isBlank()) {
-            Integer maxPrice = Integer.parseInt(params.get("max_price"));
-            spec = spec.and(OrderSpecifications.priceOrderLesserOrEqualsThan(maxPrice));
-            filterDefinitionBuilder.append("&max_price=").append(maxPrice);
+        if (params.containsKey("max_currentPrice") && !params.get("max_currentPrice").isBlank()) {
+            Integer maxCurrentPrice = Integer.parseInt(params.get("max_currentPrice"));
+            spec = spec.and(OrderSpecifications.priceOrderLesserOrEqualsThan(maxCurrentPrice));
+            filterDefinitionBuilder.append("&max_currentPrice=").append(maxCurrentPrice);
         }
+
+//        ********************
+//        String filterName = params.get("nameCustomer");
+//        if (filterName != null && !filterName.isBlank()) {
+//            spec = spec.and(OrderSpecifications.nameCustomerLike(filterName));
+//            filterDefinitionBuilder.append("&nameCustomer=").append(filterName);
+//        }
 
         filterDefinition = filterDefinitionBuilder.toString();
     }

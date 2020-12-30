@@ -34,6 +34,12 @@
             <input class="form-control" th:value="${param.max_currentPrice != null ? param.max_currentPrice : null}" name="max_currentPrice" type="number" id="maxCurrentPriceInput">
         </div>
 
+<!--        *****************************-->
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="nameCustomerInput">Имя клиента</label>-->
+<!--            <input class="form-control" th:value="${param.nameCustomer != null ? param.nameCustomer : null}" name="nameCustomer" type="text" id="nameCustomerInput">-->
+<!--        </div>-->
+
         <button class="btn btn-primary" type="submit">Фильтровать</button>
         <a class="btn btn-primary" th:href="@{/orders}">Очистить фильтр</a>
     </form>
